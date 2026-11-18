@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: OcclupanID-service
+  servlet:
+    multipart:
+      max-file-size: 15MB
+      max-request-size: 15MB
+
+occlupanid:
+  model-path: classpath:models/deeplearning4jOcclupanidModel1.4.0.zip
+  allowed-origin: http://localhost:3000 # Override via OCCLUPANID_ALLOWED_ORIGIN in AWS
+  class-names: AdmordorsumFloridensis,AdmordorsumGrongingensis,AspericardisLehmeri,ConcavicepsScobifolium,GenevertonicusQuimbyi,NeotesseraVitripalpus,PalpatophoraGlyphodorsalis,PalpatophoraUtiliformis,PalpatophoraUtiliformisGrandis,PorrectofrontusMechadeus,UnidentiaOblongaris,UnidentiaObtusamaxillaAzureus
