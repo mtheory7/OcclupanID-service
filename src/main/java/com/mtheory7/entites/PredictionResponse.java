@@ -1,4 +1,4 @@
-package com.mtheory7.occlupanidservice.entites;
+package com.mtheory7.entites;
 
 import java.util.List;
 

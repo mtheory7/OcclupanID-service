@@ -8,5 +8,5 @@ spring:
 
 occlupanid:
   model-path: classpath:models/deeplearning4jOcclupanidModel1.4.0.zip
-  allowed-origin: http://localhost:3000 # Override via OCCLUPANID_ALLOWED_ORIGIN in AWS
+  allowed-origin: https://main.d36kncurtil256.amplifyapp.com # Override via OCCLUPANID_ALLOWED_ORIGIN in AWS
   class-names: AdmordorsumFloridensis,AdmordorsumGrongingensis,AspericardisLehmeri,ConcavicepsScobifolium,GenevertonicusQuimbyi,NeotesseraVitripalpus,PalpatophoraGlyphodorsalis,PalpatophoraUtiliformis,PalpatophoraUtiliformisGrandis,PorrectofrontusMechadeus,UnidentiaOblongaris,UnidentiaObtusamaxillaAzureus

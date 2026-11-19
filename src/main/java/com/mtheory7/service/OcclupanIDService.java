@@ -1,7 +1,7 @@
-package com.mtheory7.occlupanidservice.service;
+package com.mtheory7.service;
 
-import com.mtheory7.occlupanidservice.entites.PredictionResponse;
-import com.mtheory7.occlupanidservice.entites.PredictionResponse.CandidatePrediction;
+import com.mtheory7.entites.PredictionResponse;
+import com.mtheory7.entites.PredictionResponse.CandidatePrediction;
 import jakarta.annotation.PostConstruct;
 import org.datavec.image.loader.NativeImageLoader;
 import org.deeplearning4j.nn.graph.ComputationGraph;

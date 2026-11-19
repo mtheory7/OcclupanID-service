@@ -1,14 +1,14 @@
-package com.mtheory7.occlupanidservice.controller;
+package com.mtheory7.controller;
 
-import java.awt.*;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Set;
 
-import com.mtheory7.occlupanidservice.entites.PredictionResponse;
-import com.mtheory7.occlupanidservice.service.OcclupanIDService;
+import com.mtheory7.entites.PredictionResponse;
+import com.mtheory7.service.OcclupanIDService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.server.ResponseStatusException;
@@ -26,6 +26,11 @@ public class OcclupanIDController {
 
     public OcclupanIDController(OcclupanIDService classifierService) {
         this.classifierService = classifierService;
+    }
+
+    @GetMapping("/health")
+    public ResponseEntity<String> health() {
+        return ResponseEntity.ok("OK");
     }
 
     @PostMapping(value = "/predict", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
