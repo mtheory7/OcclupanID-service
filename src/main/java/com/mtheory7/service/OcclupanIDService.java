@@ -2,6 +2,7 @@ package com.mtheory7.service;
 
 import com.mtheory7.entites.PredictionResponse;
 import com.mtheory7.entites.PredictionResponse.CandidatePrediction;
+import com.mtheory7.utils.CropToSquare;
 import jakarta.annotation.PostConstruct;
 import org.datavec.image.loader.NativeImageLoader;
 import org.deeplearning4j.nn.graph.ComputationGraph;
@@ -32,6 +33,7 @@ public class OcclupanIDService {
     private List<String> classNames;
 
     private ComputationGraph model;
+    private final CropToSquare cropToSquare = new CropToSquare();
     private final ReentrantLock inferenceLock = new ReentrantLock(true);
 
     @PostConstruct
@@ -45,7 +47,7 @@ public class OcclupanIDService {
     public PredictionResponse classify(InputStream imageStream) throws IOException {
         long startNs = System.nanoTime();
 
-        NativeImageLoader loader = new NativeImageLoader(IMAGE_HEIGHT, IMAGE_WIDTH, CHANNELS);
+        NativeImageLoader loader = new NativeImageLoader(IMAGE_HEIGHT, IMAGE_WIDTH, CHANNELS, cropToSquare);
         INDArray features = loader.asMatrix(imageStream); // [1, 3, 224, 224]
         INDArray probabilities = null;
 
